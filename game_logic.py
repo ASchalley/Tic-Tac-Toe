@@ -89,6 +89,7 @@ class GameBoard(QMainWindow, Ui_gameBoard):
         self.__chosen = []
         self.replayButton.hide()
         self.submitButton.show()
+        self.placeLabel.setText("Place X")
         self.label1.setText("")
         self.label2.setText("")
         self.label3.setText("")
@@ -107,13 +108,16 @@ class GameBoard(QMainWindow, Ui_gameBoard):
         self.spot7.show()
         self.spot8.show()
         self.spot9.show()
+        if self.__first == 1:
+            self.humanmove()
+        elif self.__first == 2:
+            self.computermove()
 
     def computermove(self) -> None:
         """
         Method to place computers O
         """
         move = None
-        print(f"difficulty {self.__difficulty}")
         if self.__difficulty == 1:
             move = random.choice([1,2,3,4,5,6,7,8,9])
             while move in self.__chosen:
@@ -125,7 +129,6 @@ class GameBoard(QMainWindow, Ui_gameBoard):
         elif self.__difficulty == 4:
             pass
         if move == 1:
-            print("move placed")
             self.spot1.hide()
             self.label1.setText("O")
             self.__chosen.append(1)
@@ -237,6 +240,11 @@ class GameBoard(QMainWindow, Ui_gameBoard):
         """
         Method to check if a move wins.
         """
+        # https://stackoverflow.com/questions/76562924/reset-the-status-of-radio-buttons-in-a-qgroupbox-in-pyqt6
+        for radioButton in [self.spot1, self.spot2, self.spot3, self.spot4, self.spot5, self.spot6, self.spot7, self.spot8, self.spot9]:
+            radioButton.setAutoExclusive(False)
+            radioButton.setChecked(False)
+            radioButton.setAutoExclusive(True)
         if player == 1:
             if self.label1.text() == "X":
                 if self.label2.text() == "X":
@@ -273,7 +281,7 @@ class GameBoard(QMainWindow, Ui_gameBoard):
             else:
                 self.tiecheck()
                 self.computermove()
-        if player == "2":
+        if player == 2:
             if self.label1.text() == "O":
                 if self.label2.text() == "O":
                     if self.label3.text() == "O":
@@ -311,6 +319,5 @@ class GameBoard(QMainWindow, Ui_gameBoard):
                 self.humanmove()
 
     def tiecheck(self):
-        print (len(self.__chosen))
         if len(self.__chosen) >= 9:
             self.winscreen(3)
