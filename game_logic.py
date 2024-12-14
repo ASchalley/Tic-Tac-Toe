@@ -1,4 +1,3 @@
-import csv
 from PyQt6.QtWidgets import *
 from gamestart import *
 
