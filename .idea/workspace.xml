@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0fac991-87ee-4e6f-91d6-1c7ea7ee757a" name="Changes" comment="Creating Files">
+    <list default="true" id="f0fac991-87ee-4e6f-91d6-1c7ea7ee757a" name="Changes" comment="Stores Settings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_logic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gamestart.py" beforeDir="false" afterPath="$PROJECT_DIR$/gamestart.py" afterDir="false" />
@@ -102,11 +102,20 @@
       <option name="project" value="LOCAL" />
       <updated>1734142324303</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Stores Settings">
+      <option name="closed" value="true" />
+      <created>1734144963325</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734144963325</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creating Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating Files" />
+    <MESSAGE value="Stores Settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stores Settings" />
   </component>
 </project>
