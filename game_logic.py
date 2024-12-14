@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import *
 from gamestart import *
+from gameboard import *
 
 
 class GameStart(QMainWindow, Ui_MainWindow1):
