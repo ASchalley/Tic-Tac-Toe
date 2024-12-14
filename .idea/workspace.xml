@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0fac991-87ee-4e6f-91d6-1c7ea7ee757a" name="Changes" comment="Were getting there, but I should sleep soon.">
+    <list default="true" id="f0fac991-87ee-4e6f-91d6-1c7ea7ee757a" name="Changes" comment="Discovered error in wincheck">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameboard.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/amsch/Desktop/Final_Project/pythonProject1"
+    "last_opened_file_path": "C:/Users/amsch/Desktop/tic-tac-toe/pythonProject"
   }
 }]]></component>
   <component name="RunManager">
@@ -156,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734161944401</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Discovered error in wincheck">
+      <option name="closed" value="true" />
+      <created>1734163749994</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1734163749994</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -164,6 +173,7 @@
     <MESSAGE value="Stores Settings" />
     <MESSAGE value="Out of time" />
     <MESSAGE value="Were getting there, but I should sleep soon." />
-    <option name="LAST_COMMIT_MESSAGE" value="Were getting there, but I should sleep soon." />
+    <MESSAGE value="Discovered error in wincheck" />
+    <option name="LAST_COMMIT_MESSAGE" value="Discovered error in wincheck" />
   </component>
 </project>
