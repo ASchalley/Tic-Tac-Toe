@@ -1,9 +1,7 @@
-import random
-
 from PyQt6.QtWidgets import *
 from gamestart import *
 from gameboard import *
-from random import *
+import random
 
 class GameStart(QMainWindow, Ui_MainWindow):
 
@@ -13,6 +11,10 @@ class GameStart(QMainWindow, Ui_MainWindow):
         """
         super().__init__()
         self.setupUi(self)
+        self.game = None
+        self.diff = 0
+        self.first = 0
+        print("1")
         self.startGameButton.clicked.connect(lambda : self.startgame())
 
     def startgame(self) -> None:
@@ -20,40 +22,39 @@ class GameStart(QMainWindow, Ui_MainWindow):
         Method to start game with selected settings.
         """
         self.storesettings()
-        application = QApplication([])
-        window = GameBoard()
-        window.show()
-        application.exec()
+        self.game = GameBoard() # https://www.pythonguis.com/tutorials/pyqt6-creating-multiple-windows/ to create a second window
+        self.game.show()
+
 
     def storesettings(self) -> None:
         """
         Method to write settings
         """
         if self.difficultyButton1.isChecked():
-            diff = 1
+            self.diff = 1
         elif self.difficultyButton2.isChecked():
-            diff = 2
+            self.diff = 2
         elif self.difficultyButton3.isChecked():
-            diff = 3
+            self.diff = 3
         elif self.difficultyButton4.isChecked():
-            diff = 4
+            self.diff = 4
         else:
-            diff = 1
+            self.diff = 1
         if self.firstButton2.isChecked():
-            first = 1
+            self.first = 1
         elif self.firstButton3.isChecked():
-            first = 2
+            self.first = 2
         else:
-            first = random.choice([1, 2])  # https://www.geeksforgeeks.org/random-numbers-in-python/
+            self.first = random.choice([1, 2])  # https://www.geeksforgeeks.org/random-numbers-in-python/
         file = open("data.txt", "w")
-        file.write(str(diff) + "\n")
-        if diff == 4:
-            first = 2
-        file.write(str(first))
+        file.write(str(self.diff) + "\n")
+        if self.diff == 4:
+            self.first = 2
+        file.write(str(self.first))
         file.close()
 
 
-class GameBoard(QMainWindow, Ui_MainWindow2):
+class GameBoard(QMainWindow, Ui_gameBoard):
 
     def __init__(self) -> None:
         """
@@ -65,6 +66,8 @@ class GameBoard(QMainWindow, Ui_MainWindow2):
         super().__init__()
         self.takesettings()
         self.setupUi(self)
+        if self.__first == 1:
+            self.humanmove()
         self.submitButton.clicked.connect( lambda : self.humanmove())
 
     def takesettings(self) -> None:
@@ -91,7 +94,11 @@ class GameBoard(QMainWindow, Ui_MainWindow2):
             pass
         elif self.__difficulty == 4:
             pass
+        self.wincheck(2)
 
+    def winscreen(self, winner):
+        if winner == 1:
+            pass
 
     def humanmove(self) -> None:
         """
@@ -101,108 +108,109 @@ class GameBoard(QMainWindow, Ui_MainWindow2):
             self.spot1.hide()
             self.label1.setText("X")
             self.__chosen.append(1)
-            self.computermove()
         elif self.spot2.isChecked():
             self.spot2.hide()
             self.label2.setText("X")
             self.__chosen.append(2)
-            self.computermove()
         elif self.spot3.isChecked():
             self.spot3.hide()
             self.label3.setText("X")
             self.__chosen.append(3)
-            self.computermove()
         elif self.spot4.isChecked():
             self.spot4.hide()
             self.label4.setText("X")
             self.__chosen.append(4)
-            self.computermove()
         elif self.spot5.isChecked():
             self.spot5.hide()
             self.label5.setText("X")
             self.__chosen.append(5)
-            self.computermove()
         elif self.spot6.isChecked():
             self.spot6.hide()
             self.label6.setText("X")
             self.__chosen.append(6)
-            self.computermove()
         elif self.spot7.isChecked():
             self.spot7.hide()
             self.label7.setText("X")
             self.__chosen.append(7)
-            self.computermove()
         elif self.spot8.isChecked():
             self.spot8.hide()
             self.label8.setText("X")
             self.__chosen.append(8)
-            self.computermove()
         elif self.spot9.isChecked():
             self.spot9.hide()
             self.label9.setText("X")
             self.__chosen.append(9)
-            self.computermove()
+        self.wincheck(1)
 
-    def wincheck(self) -> None:
+    def wincheck(self, player) -> None:
         """
         Method to check if a move wins.
         """
-        if self.label1 == "X":
+        if player == 1:
+            if self.label1 == "X":
+                if self.label2 == "X":
+                    if self.label3 == "X":
+                        self.placeLabel.setText("You Win!")
+                if self.label4 == "X":
+                    if self.label7 == "X":
+                        self.placeLabel.setText("You Win!")
+                if self.label5 == "X":
+                    if self.label9 == "X":
+                        self.placeLabel.setText("You Win!")
             if self.label2 == "X":
-                if self.label3 == "X":
-                    self.placeLabel.setText("You Win!")
-            if self.label4 == "X":
-                if self.label7 == "X":
-                    self.placeLabel.setText("You Win!")
-            if self.label5 == "X":
-                if self.label9 == "X":
-                    self.placeLabel.setText("You Win!")
-        if self.label2 == "X":
-            if self.label5 == "X":
-                if self.label8 == "X":
-                    self.placeLabel.setText("You Win!")
-        if self.label3 == "X":
-            if self.label6 == "X":
-                if self.label9 == "X":
-                    self.placeLabel.setText("You Win!")
-            if self.label5 == "X":
-                if self.label7 == "X":
-                    self.placeLabel.setText("You Win!")
-        if self.label4 == "X":
-            if self.label5 == "X":
+                if self.label5 == "X":
+                    if self.label8 == "X":
+                        self.placeLabel.setText("You Win!")
+            if self.label3 == "X":
                 if self.label6 == "X":
-                    self.placeLabel.setText("You Win!")
-        if self.label7 == "X":
-            if self.label8 == "X":
-                if self.label9 == "X":
-                    self.placeLabel.setText("You Win!")
-
-        if self.label1 == "O":
+                    if self.label9 == "X":
+                        self.placeLabel.setText("You Win!")
+                if self.label5 == "X":
+                    if self.label7 == "X":
+                        self.placeLabel.setText("You Win!")
+            if self.label4 == "X":
+                if self.label5 == "X":
+                    if self.label6 == "X":
+                        self.placeLabel.setText("You Win!")
+            if self.label7 == "X":
+                if self.label8 == "X":
+                    if self.label9 == "X":
+                        self.placeLabel.setText("You Win!")
+        if self.placeLabel.text() == "You Win!":
+            self.winscreen(1)
+        else:
+            self.computermove()
+        if player == 2:
+            if self.label1 == "O":
+                if self.label2 == "O":
+                    if self.label3 == "O":
+                        self.placeLabel.setText("You Lose!")
+                if self.label4 == "O":
+                    if self.label7 == "O":
+                        self.placeLabel.setText("You Lose!")
+                if self.label5 == "O":
+                    if self.label9 == "O":
+                        self.placeLabel.setText("You Lose!")
             if self.label2 == "O":
-                if self.label3 == "O":
-                    self.placeLabel.setText("You Lose!")
-            if self.label4 == "O":
-                if self.label7 == "O":
-                    self.placeLabel.setText("You Lose!")
-            if self.label5 == "O":
-                if self.label9 == "O":
-                    self.placeLabel.setText("You Lose!")
-        if self.label2 == "O":
-            if self.label5 == "O":
-                if self.label8 == "O":
-                    self.placeLabel.setText("You Lose!")
-        if self.label3 == "O":
-            if self.label6 == "O":
-                if self.label9 == "O":
-                    self.placeLabel.setText("You Lose!")
-            if self.label5 == "O":
-                if self.label7 == "O":
-                    self.placeLabel.setText("You Lose!")
-        if self.label4 == "O":
-            if self.label5 == "O":
+                if self.label5 == "O":
+                    if self.label8 == "O":
+                        self.placeLabel.setText("You Lose!")
+            if self.label3 == "O":
                 if self.label6 == "O":
-                    self.placeLabel.setText("You Lose!")
-        if self.label7 == "O":
-            if self.label8 == "O":
-                if self.label9 == "O":
-                    self.placeLabel.setText("You Lose!")
+                    if self.label9 == "O":
+                        self.placeLabel.setText("You Lose!")
+                if self.label5 == "O":
+                    if self.label7 == "O":
+                        self.placeLabel.setText("You Lose!")
+            if self.label4 == "O":
+                if self.label5 == "O":
+                    if self.label6 == "O":
+                        self.placeLabel.setText("You Lose!")
+            if self.label7 == "O":
+                if self.label8 == "O":
+                    if self.label9 == "O":
+                        self.placeLabel.setText("You Lose!")
+        if self.placeLabel.text() == "You Lose!":
+            self.winscreen(2)
+        else:
+            self.humanmove()

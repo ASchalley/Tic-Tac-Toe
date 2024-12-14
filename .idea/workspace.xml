@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0fac991-87ee-4e6f-91d6-1c7ea7ee757a" name="Changes" comment="Stores Settings">
+    <list default="true" id="f0fac991-87ee-4e6f-91d6-1c7ea7ee757a" name="Changes" comment="Out of time">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamestart.py" beforeDir="false" afterPath="$PROJECT_DIR$/gamestart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,21 +25,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ASchalley"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ASchalley&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ASchalley/Tic-Tac-Toe.git",
-    "accountId": "aef4e8b2-7d3c-476c-a0ab-c41a2e17a762"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ASchalley/Tic-Tac-Toe.git&quot;,
+    &quot;accountId&quot;: &quot;aef4e8b2-7d3c-476c-a0ab-c41a2e17a762&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2qBd11JwVlX7ysn1Am3PhqYiIjM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -47,11 +48,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.game_logic.executor": "Run",
     "Python.gameboard.executor": "Run",
     "Python.gamestart.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/amsch/Desktop/Final_Project/pythonProject1"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -110,12 +113,21 @@
       <option name="project" value="LOCAL" />
       <updated>1734144963325</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Out of time">
+      <option name="closed" value="true" />
+      <created>1734147169451</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734147169451</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creating Files" />
     <MESSAGE value="Stores Settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stores Settings" />
+    <MESSAGE value="Out of time" />
+    <option name="LAST_COMMIT_MESSAGE" value="Out of time" />
   </component>
 </project>
